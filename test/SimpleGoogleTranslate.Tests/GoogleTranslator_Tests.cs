@@ -15,7 +15,23 @@ namespace SimpleGoogleTranslate.Tests
             var translator = new GoogleTranslator();
 
             // Act
-            actual = translator.Translate("en", "no", input, true);
+            actual = translator.Translate("en", "no", input);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Is_Space_left_on_at_end_of_string()
+        {
+            // Arrange
+            const string input = "Some Stuff ";
+            const string expected = "noen Stuff ";
+            string actual = "";
+            var translator = new GoogleTranslator();
+
+            // Act
+            actual = translator.Translate("en", "no", input);
 
             // Assert
             Assert.AreEqual(expected, actual);
