@@ -37,22 +37,6 @@ namespace SimpleGoogleTranslate.Tests
 
 
         [Test]
-        public void Are_Curly_Brackets_Spaces_fixed()
-        {
-            // Arrange
-            const string input = "( { 0 } : { 1 } )";
-            const string expected = "({0}:{1})";
-            var actual = "";
-
-            // Act
-            actual = GoogleTranslateStringParser.Fix(input);
-
-            // Assert
-            Assert.AreEqual(expected, actual);
-        }
-
-
-        [Test]
         public void Is_Space_Before_Colon_Removed()
         {
             // Arrange
@@ -99,19 +83,6 @@ namespace SimpleGoogleTranslate.Tests
             Assert.AreEqual(expected, actual);
         }
 
-        [Test]
-        public void Is_Space_left_on_at_end_of_string()
-        {
-            // Arrange
-            const string input = "Some - Stuff ";
-            const string expected = "Some-Stuff ";
-            string actual;
-
-            // Act
-            actual = GoogleTranslateStringParser.Fix(input);
-
-            // Assert
-            Assert.AreEqual(expected, actual);
-        }
+     
     }
 }
