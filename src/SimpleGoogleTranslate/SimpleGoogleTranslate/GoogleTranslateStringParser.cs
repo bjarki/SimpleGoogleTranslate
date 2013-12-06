@@ -8,6 +8,9 @@ namespace SimpleGoogleTranslate
         {
             input = input.StringFix(@" \.", @".");
             input = input.StringFix(@" ,", @",");
+            input = input.StringFix(@" :", @":");
+            input = input.StringFix(@" =", @"=");
+            input = input.StringFix(@" - ", @"-");
             return input;
         }
 
