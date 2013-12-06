@@ -59,7 +59,7 @@ namespace SimpleGoogleTranslate
         /// <param name="unstranslatedText">Text to be translated</param>
         /// <param name="optimizeSpecialSequences">True if format placeholders ({n}) should remain on their place</param>
         /// <returns>Text translated from source language to target language</returns>
-        public string Translate(string fromLanguage, string toLanguage, string unstranslatedText, bool optimizeSpecialSequences)
+        public string Translate(string fromLanguage, string toLanguage, string unstranslatedText, bool optimizeSpecialSequences = true)
         {
             Dictionary<string, string> encodeInfo = null;
             if (optimizeSpecialSequences) unstranslatedText = EncodeSequences(unstranslatedText, out encodeInfo);
