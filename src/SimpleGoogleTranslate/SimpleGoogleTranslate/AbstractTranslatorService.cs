@@ -121,6 +121,14 @@ namespace SimpleGoogleTranslate
                 c = c.Replace(@"&", "1111 ");
                 encodeInfo.Add("1111 ", @"&");
             }
+
+            if (c.EndsWith(" "))
+            {
+                c = c.Remove(c.Length - 1);
+                c = c.Insert(c.Length, "2222");
+                encodeInfo.Add("2222", " ");
+            }
+
             return c;
         }
 
